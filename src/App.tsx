@@ -1,6 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Counter from './components/Counter';
+import Users from './components/Users';
+
 
 
 let student: string = 'Jeff';
@@ -12,7 +15,7 @@ let fees: number[] = [100, 200, 300];
 interface Person  {
   name: string,
   job?: string, // optional property .. When we want to set it as optional use the ( ? ) for it
-  employed: string | boolean ,
+  employed?: string | boolean ,
   age: number,
   location?: string | number  // or number types
 }
@@ -32,7 +35,8 @@ const handelAddUser = (firstName: string,age: number, address: string): void => 
 function App() {
   return (
     <div className="App">
-      
+      <Counter></Counter>
+      <Users></Users>
     </div>
   );
 }
