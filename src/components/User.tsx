@@ -1,18 +1,24 @@
 import React, { FC } from 'react';
+import UserModel from './types/models';
+
+// interface Props {
+//     age: number,
+//     name: string,
+//     addUser: ()=> void
+// }
 
 interface Props {
-    age: number,
-    name: string,
-    addUser: ()=> void
+    user: UserModel,
+    addUser: (user: UserModel)=> void
 }
-
-const User: FC<Props> = ({name,age,addUser}) => {
+const User: FC<Props> = ({user,addUser}) => {
     
     return (
         <div>
-            <h2>Hello From : { name}</h2>
-            <h2>His age : {age}</h2>
-            <button onClick={addUser}>Add me</button>
+            <h2>Hello From : {user.name}</h2>
+            <p>Email: { user.email }</p>
+            
+            <button onClick={()=>  addUser(user)}>Add me</button>
         </div>
     );
 };
